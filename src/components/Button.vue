@@ -13,7 +13,7 @@ export default {
   },
   methods: {
     onClick: function () {
-      this.$emit("toggle-add-task");
+      this.$emit("btn-click");
     },
   },
 };
