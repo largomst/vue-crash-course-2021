@@ -39,7 +39,7 @@ export default {
         return;
       }
       const newTask = {
-        id: Math.floor(Math.random() * 1000000), // 一个临时方案
+        // id: Math.floor(Math.random() * 1000000), // 一个临时方案
         text: this.text,
         day: this.day,
         reminder: this.reminder,
