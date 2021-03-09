@@ -1,12 +1,6 @@
 {
   "tasks": [
     {
-      "id": 2,
-      "text": "DJAINGO",
-      "day": "Tomorrow",
-      "reminder": true
-    },
-    {
       "id": 3,
       "text": "Vue.js",
       "day": "Today",
@@ -15,14 +9,20 @@
     {
       "text": "RFD",
       "day": "Today",
-      "reminder": true,
+      "reminder": false,
       "id": 5
     },
     {
       "text": "VUEX",
       "day": "The day after tomorrow",
-      "reminder": false,
+      "reminder": true,
       "id": 6
+    },
+    {
+      "text": "Django",
+      "day": "Tomorrow",
+      "reminder": "",
+      "id": 7
     }
   ]
 }
