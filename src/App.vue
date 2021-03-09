@@ -37,13 +37,15 @@ export default {
     };
   },
   methods: {
-    deleteTask(id) {
-      // console.log("task", id);
+    async deleteTask(id) {
       if (confirm("Arey you sure?")) {
         // 过滤掉 task.id 为 id 的 task
-        this.tasks = this.tasks.filter((task) => {
-          return task.id !== id;
+        const res = await fetch(`api/tasks/${id}`, {
+          method: "DELETE",
         });
+        res.status === 200
+          ? (this.tasks = this.tasks.filter((task) => task.id !== id))
+          : alert("Error deleting task");
       }
     },
     toggleReminder(id) {
@@ -52,9 +54,20 @@ export default {
         task.id === id ? { ...task, reminder: !task.reminder } : task
       );
     },
-    addTask(task) {
-      this.tasks = [...this.tasks, task];
+    async addTask(task) {
+      console.log("add Task");
+      const res = await fetch("api/tasks", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(task),
+      });
+      const data = await res.json();
+
+      this.tasks = [...this.tasks, data];
     },
+
     toggleAddTask() {
       console.log("toggleAddTask");
       this.showAddTask = !this.showAddTask;

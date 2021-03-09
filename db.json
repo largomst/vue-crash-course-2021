@@ -1,22 +1,28 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "text": "DJAINGO REST API",
-            "day": "Tomorrow",
-            "reminder": true
-        },
-        {
-            "id": 2,
-            "text": "DJAINGO",
-            "day": "Tomorrow",
-            "reminder": true
-        },
-        {
-            "id": 3,
-            "text": "Vue.js",
-            "day": "Today",
-            "reminder": false
-        }
-    ]
+  "tasks": [
+    {
+      "id": 2,
+      "text": "DJAINGO",
+      "day": "Tomorrow",
+      "reminder": true
+    },
+    {
+      "id": 3,
+      "text": "Vue.js",
+      "day": "Today",
+      "reminder": false
+    },
+    {
+      "text": "RFD",
+      "day": "Today",
+      "reminder": true,
+      "id": 5
+    },
+    {
+      "text": "VUEX",
+      "day": "The day after tomorrow",
+      "reminder": false,
+      "id": 6
+    }
+  ]
 }
