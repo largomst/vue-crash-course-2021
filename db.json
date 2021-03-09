@@ -11,6 +11,12 @@
             "text": "DJAINGO",
             "day": "Tomorrow",
             "reminder": true
+        },
+        {
+            "id": 3,
+            "text": "Vue.js",
+            "day": "Today",
+            "reminder": false
         }
     ]
 }

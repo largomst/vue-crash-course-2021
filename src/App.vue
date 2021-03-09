@@ -1,6 +1,10 @@
 <template>
   <div class="container">
-    <Header title="Task Tracker" @toggle-add-task="toggleAddTask" :showAddTask="showAddTask"></Header>
+    <Header
+      title="Task Tracker"
+      @toggle-add-task="toggleAddTask"
+      :showAddTask="showAddTask"
+    ></Header>
     <div v-if="showAddTask">
       <AddTask @add-task="addTask" />
     </div>
@@ -55,36 +59,21 @@ export default {
       console.log("toggleAddTask");
       this.showAddTask = !this.showAddTask;
     },
+    async fetchTasks() {
+      const res = await fetch("http://localhost:5000/tasks");
+      const data = await res.json();
+      return data;
+    },
+    async fetchTask(id) {
+      const res = await fetch("http://localhost:5000/tasks/${id}");
+      const data = await res.json();
+      return data;
+    },
   },
 
-  created() {
+  async created() {
     // 创建一些硬编码的信息
-    this.tasks = [
-      {
-        id: 1,
-        text: "DJAINGO REST API",
-        day: "Tomorrow",
-        reminder: true,
-      },
-      {
-        id: 2,
-        text: "DJAINGO",
-        day: "Tomorrow",
-        reminder: true,
-      },
-      {
-        id: 3,
-        text: "VUEJS",
-        day: "Tomorrow",
-        reminder: true,
-      },
-      {
-        id: 4,
-        text: "JAVASCRIPT",
-        day: "Tomorrow",
-        reminder: false,
-      },
-    ];
+    this.tasks = await this.fetchTasks();
   },
 };
 </script>
