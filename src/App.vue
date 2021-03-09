@@ -25,6 +25,7 @@ export default {
     Tasks,
     AddTask,
   },
+  // data 维持初始化组件时组件的状态
   data: function () {
     return {
       tasks: [],
@@ -57,6 +58,7 @@ export default {
   },
 
   created() {
+    // 创建一些硬编码的信息
     this.tasks = [
       {
         id: 1,

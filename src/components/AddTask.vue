@@ -26,7 +26,7 @@ export default {
   name: "AddTask",
   data() {
     return {
-      text: "ABC",
+      text: "",
       day: "",
       reminder: false,
     };
