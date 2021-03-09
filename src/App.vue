@@ -13,6 +13,8 @@
       @delete-task="deleteTask"
       :tasks="tasks"
     />
+    <router-view></router-view>
+    <Footer />
   </div>
 </template>
 
@@ -20,6 +22,7 @@
 import Header from "./components/Header";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
+import Footer from "./components/Footer";
 
 export default {
   name: "App",
@@ -28,6 +31,7 @@ export default {
     Header,
     Tasks,
     AddTask,
+    Footer,
   },
   // data 维持初始化组件时组件的状态
   data: function () {
